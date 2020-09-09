@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- <iframe width="420" height="345" src="https://www.youtube.com/watch?v=OOy764mDtiA"></iframe> -->
+    <p>
+        First Name: <input type="firstname" placeholder="anonymous" name="fname" required />
+        Last Name: <input type="lastname" placeholder="anonymous" name="lname" required />
+    </p>
+
+    <p>
+        Email: <input type="email" placeholder="name@domain.com" name="mail" required />
+    </p>
+
+    <p>
+        Are you going to recommend this website? <br>
+        
+        <input type="radio" name="ratingradio" value="Yes" checked>Yes
+        <br>
+        <input type="radio" name="ratingradio" value="No">No
+        <br>
+
+    </p>
+
+    <p>
+        What is your favorite website? <br>
+
+        <input type="checkbox" name="rating" value="Google"> Google
+        <br>
+        <input type="checkbox" name="rating" value="Facebook"> Facebook
+        <br>
+        <input type="checkbox" name="rating" value="Twitter"> Twitter
+        <br>
+        <input type="checkbox" name="rating" value="Bing"> Bing
+        <br>
+        <input type="checkbox" name="rating" value="Youtube"> Youtube
+        <br>
+    </p>
+
+    <p>The select element defines a drop-down list:</p>
+
+    <form>
+        <label>Rate the website on a scale of 1 to 10:</label>
+        <select>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+            <option value="six">6</option>
+            <option value="seven">7</option>
+            <option value="eight">8</option>
+            <option value="nine">9</option>
+            <option value="ten">10</option>
+        </select>
+    </form>
+
+    <p>Additional comments from the user:</p>
+
+    <textarea rows="10" cols="70" name="comment" form="usrform">Enter text here...</textarea>
+    
+    <button>Submit</button>
+
+    <h2>Textarea</h2>
+
+    <form>
+        <textarea name="message" rows="10" cols="30">
+            The cat was playing in the garden.
+        </textarea>
+        <br><br>
+    </form>
+
+    <h2>Multiple Selections</h2>
+
+    <form>
+        <label>Choose a car:</label>
+        <select id="cars" name="cars" size="4" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </form>
+
+    <h2>The button Element</h2>
+
+    <button type="button" name="button" onclick="alert('Hello World!')">Click Me!</button>
+
+</body>
+
+</html>
