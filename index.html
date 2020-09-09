@@ -1,26 +1,185 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <!--This is the title of my webpage!-->
+    <title>CSCI 225 Homepage of Adithya Pandiri</title>
 </head>
+<!--In this style tag, we apply all the CSS attributes in each of the classes below so that they can be used in the div blocks-->
+<style>
+.navbar {
+    border: 2px solid black;
+    background-color: lightgray;
+    width: 40%;
+    padding: 1%;
+}
+.introduction {
+    border: 2px solid black;
+    background-color: lightgrey;
+    width: 40%;
+    padding: 1%;
+}
+.assignment {
+    border: 2px solid black;
+    background-color: lightgrey;
+    width: 40%;
+    padding: 1%;
+}
+.portfolio {
+    border: 2px solid black;
+    background-color: lightgrey;
+    width: 40%;
+    padding: 1%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+.t01 {
+    background-color: skyblue;
+}
+.t02 {
+    background-color: orange;
+}
+.t03 {
+    background-color: lightgreen;
+}
+.t04 {
+    background-color: gold;
+}
+.t05 {
+    background-color: rgb(219, 124, 219);
+}
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: darksalmon;
+    color: white;
+}
+</style>
 <body>
+    <!--This is my first div block called navbar-->
+    <div class="navbar">
+        <ul>
+            <li><a href="https://www.usca.edu/myusca/">UofSC Aiken</a></li>
+            <li><a href="#assignment">Assignment</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+            <li><a href="https://www.google.com/?safe=active&safe=active">Google</a></li>
+            <li><a href="https://www.yahoo.com/">Yahoo</a></li>
+        </ul>
+    </div>
+    <!--This div block is an introduction about me including an image of my choice-->
+    <div class="introduction">
+        <h1>Introduction</h1>
+        <p>Hello My name is Adithya Pandiri. I am from Lexington South Carolina. I am a sophomore at USC Aiken. I attended Midlands Technical College for 2 years and then transfered to USC Aiken. My major is Applied Computer Science. </p>
+        <img src="img/tiger.jpg" alt="Tiger" width="200px" />
+    </div>
 
-<h1>The align-content Property</h1>
+    <!--This div block called assignment includes all the information about my first assignment-->
+    <div class="assignment">
+        <h1 id="assignment">Assignment</h1>
+        <ol>
+            <li><a href="doc/Assignment1.pdf">Assignment1</a></li>
+            <li><a href="./index.html">Index</a></li>
+        </ol>
+    </div>
 
-<p>The "align-content: space-between;" displays the flex lines with equal space between them:</p>
+    <!--This div block is called portfolio and I describe all of my previous projects which I used to do in HTML and CSS-->
+    <div class="portfolio">
+        <h1>Portfolio</h1>
+        <ul>
+            <li>Ultimate Fitness Website</li>
+            <li>River Bluff High School Gator Town Website</li>
+        </ul>
+        <p>My first project was the Ultimate Fitness website where we have to create a website for the client. We used photoshop to create a poster at the top of the webpage and created four navigation bars which are home, about us, contact us, and news and create a separate CSS document for each of the links. </p>
+        <p>The next project I worked on was creating a webpage for our school store called Gator Town. The easy part about this assignment was where we get to work with groups since this assignment is almost the same at the previous one except this assignment was very big and complex compared to the previous project we did.</p>
+    </div>
 
-<div class="flex-container">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-</div>
+    <!--This section is the contact information section where you can be able to contact me anytime-->
+    <p id="contact">Contact Information
+
+    <address>
+        My email address: <a href="mailto:apandiri@usca.edu">mailto:apandiri@usca.edu</a>      
+    </address>
+
+    </p>
+
+    <!--This table represents my USCA schedule as of this Fall 2020 semester at USC Aiken-->
+    <h1>Schedule</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>Hours</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>9:00am-10:00am</td>
+            <td class="t01">Intro to Computer Organization</td>
+            <td class="t03">Discrete Math for Comp Science</td>
+            <td class="t01">Intro to Computer Organization</td>
+            <td class="t03">Discrete Math for Comp Science</td>
+            <td class="t01">Intro to Computer Organization</td>
+        </tr>
+        <tr>
+            <td>10:00am-11:00am</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+        </tr>
+        <tr>
+            <td>11:00am-12:00pm</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+        </tr>
+        <tr>
+            <td>12:00pm-1:00pm</td>
+            <td class="t02">Web Development</td>
+            <td>Break</td>
+            <td class="t02">Web Development</td>
+            <td>Break</td>
+            <td>Break</td>
+        </tr>
+        <tr>
+            <td>1:00pm-2:00pm</td>
+            <td class="t04">Data Structures and Algorithms</td>
+            <td>Break</td>
+            <td class="t04">Data Structures and Algorithms</td>
+            <td>Break</td>
+            <td>Break</td>
+        </tr>
+        <tr>
+            <td>2:00pm-3:00pm</td>
+            <td class="t04">Data Structures and Algorithms</td>
+            <td class="t05">Introduction to World Music</td>
+            <td class="t04">Data Structures and Algorithms</td>
+            <td class="t05">Introduction to World Music</td>
+            <td>Break</td>
+        </tr>
+        <tr>
+            <td>3:00pm-4:00pm</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+            <td>Break</td>
+        </tr>
+    </table>
+
+    <!--In this footer, I had to write a copyright sentence and with that I had to include three editorial tags which I have not used previously-->
+    <footer>
+        <p>Copyright &#169 2020 by Adithya Pandiri <br>CSCI 225</br> <b>Web Development</b> <i>Yillian Zhang</i></p>
+    </footer>
 
 </body>
 </html>
