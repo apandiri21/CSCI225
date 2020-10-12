@@ -1,95 +1,178 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>ContactMe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            padding: 15px;
+            /* background-color: hsla(37, 90%, 51%, 1);  */
+        }
+        .myDiv {
+            border: 5px outset hsla(360, 100%, 50%, 1.0);
+            width: 560px;
+            text-align: left;
+            left: 564px;
+            top: 86px;
+            width: 674px;
+        }
+        iframe {
+            border: 5px outset hsla(360, 100%, 50%, 1.0);
+            top: 86px;
+            border-radius: 15px;
+        }
+        .wrap {
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        .nav {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+        .sidebar {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        .main {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    </style>
 </head>
 
 <body>
+<div class = "wrap">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-primary">
+        <ul class = "navbar navbar-dark bg-primary">
+            <li class="navbar-brand" href="#"><a href="https://www.usca.edu/myusca/"><mark>UofSC Aiken</mark></a></li>
+            <li class="navbar-brand" href="#"><a href="#assignment"><mark>Assignment</mark></a></li>
+            <li class="navbar-brand" href="#"><a href="#contact"><mark>Contact Information</mark></a></li>
+            <li class="navbar-brand" href="#"><a href="https://www.google.com/?safe=active&safe=active"><mark>Google</mark></a></li>
+            <li class="navbar-brand" href="#"><a href="https://www.yahoo.com/"><mark>Yahoo</mark></a></li>
+        </ul> 
+    </nav>
+
+    <!--Sidebar-->
+    <sidebar>
+     
+        <p>
+            <br><br><br><br><br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    </sidebar>
+
+
+    <!-- <div class="leftside"></div>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9YffrCViTVk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <!-- <iframe width="420" height="345" src="https://www.youtube.com/watch?v=OOy764mDtiA"></iframe> -->
-    <p>
-        First Name: <input type="textbox" placeholder="anonymous" name="fname" required />
-        Last Name: <input type="textbox" placeholder="anonymous" name="lname" required />
-    </p>
+    </div> -->
 
-    <p>
-        Email: <input type="email" placeholder="name@domain.com" name="mail" required />
-    </p>
+    <!--Main component-->
+    <main>
+        <br><br><br><br><br>
+    <div class="form-group">
 
-    <p>
-        Are you going to recommend this website? <br>
-        
-        <input type="radio" name="ratingradio" value="Yes" checked>Yes
-        <br>
-        <input type="radio" name="ratingradio" value="No">No
-        <br>
+        <form></form>
+        <p>
+            First Name: <input class="form-control" type="textbox" placeholder="anonymous" name="fname" required />
+            Last Name: <input class="form-control" type="textbox" placeholder="anonymous" name="lname" required />
+        </p>
 
-    </p>
+        <p>
+            Email: <input class="form-control" type="email" placeholder="name@domain.com" name="mail" required />
 
-    <p>
-        What is your favorite website? <br>
+            <small class="form-text text-muted">  help text </small>
+        </p>
 
-        <input type="checkbox" name="rating" value="Google"> Google
-        <br>
-        <input type="checkbox" name="rating" value="Facebook"> Facebook
-        <br>
-        <input type="checkbox" name="rating" value="Twitter"> Twitter
-        <br>
-        <input type="checkbox" name="rating" value="Bing"> Bing
-        <br>
-        <input type="checkbox" name="rating" value="Youtube"> Youtube
-        <br>
-    </p>
-
-    <p>The select element defines a drop-down list:</p>
-
-    <form>
-        <label>Rate the website on a scale of 1 to 10:</label>
-        <select>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
-            <option value="six">6</option>
-            <option value="seven">7</option>
-            <option value="eight">8</option>
-            <option value="nine">9</option>
-            <option value="ten">10</option>
-        </select>
-    </form>
-
-    <p>Additional comments from the user:</p>
-
-    <textarea rows="10" cols="70" name="comment" form="usrform">Enter text here...</textarea>
     
-    <button>Submit</button>
 
-    <h2>Textarea</h2>
+    <p>
+            Are you going to recommend this website? <br>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratingradio" value="Yes" checked>Yes
+            <br>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratingradio" value="No">No
+            <br>
+          </div>
 
-    <form>
-        <textarea name="message" rows="10" cols="30">
-            The cat was playing in the garden.
-        </textarea>
-        <br><br>
-    </form>
+       </p> 
 
-    <h2>Multiple Selections</h2>
+        
 
-    <form>
-        <label>Choose a car:</label>
-        <select id="cars" name="cars" size="4" multiple>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-        </select>
-    </form>
+        <p>
+            What is your favorite website? <br>
 
-    <h2>The button Element</h2>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="rating" value="Google"> Google
+            <br>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="rating" value="Facebook"> Facebook
+            <br>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="rating" value="Twitter"> Twitter
+            <br>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="rating" value="Bing"> Bing
+            <br>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="rating" value="Youtube"> Youtube
+            <br>
+            </div>
+        </p>
 
-    <button type="button" name="button" onclick="alert('Hello World!')">Click Me!</button>
+        <p>The select element defines a drop-down list:</p>
+
+            <label>Rate the website on a scale of 1 to 10:</label>
+            <select class="form-control">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+                <option value="seven">7</option>
+                <option value="eight">8</option>
+                <option value="nine">9</option>
+                <option value="ten">10</option>
+            </select>
+        
+
+        <p>Additional comments from the user:</p>
+
+        <textarea class="form-control" rows="10" cols="70" name="comment" form="usrform">Enter text here...</textarea>
+        
+        <input class="form-control" type = "submit" value = "submit">
+
+        <h2>The button Element</h2>
+
+        <button type="button" name="button" onclick="alert('Hello World!')">Click Me!</button>
+        
+    </div>
+
+    </main>
+
+</div>
 
 </body>
 
