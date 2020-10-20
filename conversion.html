@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--The title of the webpage-->
+        <title>Conversion</title>
+    </head>
+
+    <body>
+        <h1>Unit Conversion Calculator - Length</h1>
+
+        <form>
+
+            <!--The input textbox-->
+            <input class="form-control" id="from" type="textbox" placeholder="value" required />
+
+            <!--The selection box with id="from"-->
+            <select id="ddlFrom">
+                <option>Feet</option>
+                <option>Meters</option>
+                <option>inches</option>
+                <option>cm</option>
+                <option>yards</option>
+            </select>
+
+            =
+
+            <!--The input textbox-->
+            <input class="form-control" id="to" type="textbox" placeholder="value" required />
+
+            <!--The selection box with id="to"-->
+            <select id="ddlTo">
+                <option>Feet</option>
+                <option>Meters</option>
+                <option>inches</option>
+                <option>cm</option>
+                <option>yards</option>
+            </select>
+
+            <!--The button called convert-->
+            <button type="button" name="button" id="convert" >Convert</button>
+
+            <script type="text/javascript">
+                document.getElementById('convert').addEventListener("click", DisplayMsg,false);
+                function myFunction(p1, p2) {
+                    return p1 * p2; 
+                }
+ 
+                function DisplayMsg(){
+                    var FromValue = document.getElementById("from").value;
+                    FromValue = parseFloat(FromValue);
+
+                    var ddlFromValue = document.getElementById("ddlFrom").value;
+
+                    var ddlToValue = document.getElementById("ddlTo").value;
+
+                    var result;
+
+                    if(ddlFromValue == "Feet"){
+                        if(ddlToValue == "Meters"){
+                            result = FromValue/3.281;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "inches") {
+                            result = FromValue * 12;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "cm") {
+                            result = FromValue * 30.48;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "yards") {
+                            result = FromValue / 3;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "Feet") {
+                            result = FromValue;
+                            document.getElementById("to").value = result;
+                        }
+                    } 
+                    else if (ddlFromValue == "Meters") {
+                        if (ddlToValue == "Feet") {
+                            result = FromValue * 3.281;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "inches") {
+                            result = FromValue * 39.3701;
+                            document.getEelmentById("to").value = result;
+                        } else if (ddlToValue == "cm") {
+                            result = FromValue * 100;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "yards") {
+                            result = FromValue * 1.094;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "Meters") {
+                            result = FromValue;
+                            document.getElementById("to").value = result;
+                        }
+                    }
+                    else if (ddlFromValue == "inches") {
+                        if (ddlToValue == "Feet") {
+                            result = FromValue / 12;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "Meters") {
+                            result = FromValue / 39.37;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "cm") {
+                            result = FromValue * 2.54;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "yards") {
+                            result = FromValue / 36;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "inches") {
+                            result = FromValue;
+                            document.getElementById("to").value = result;
+                        }
+                    }
+                    else if (ddlFromValue == "cm") {
+                        if (ddlToValue == "Feet") {
+                            result = FromValue / 30.48;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "Meters") {
+                            result = FromValue / 100;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "inches") {
+                            result = FromValue / 2.54;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "yards") {
+                            result = FromValue / 91.44;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "cm") {
+                            result = FromValue;
+                            document.getElementById("to").value = result;
+                        }
+                    }
+                    else if (ddlFromValue == "yards") {
+                        if (ddlToValue == "Feet") {
+                            result = FromValue * 3;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "Meters") {
+                            result = FromValue / 1.094;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "inches") {
+                            result = FromValue * 36;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "cm") {
+                            result = FromValue * 91.44;
+                            document.getElementById("to").value = result;
+                        } else if (ddlToValue == "yards") {
+                            result = FromValue;
+                            document.getElementById("to").value = result;
+                        }
+                    }
+                }
+
+            </script>
+
+        </form>
+
+    </body>
+
+</html>
