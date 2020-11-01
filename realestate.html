@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <title>RealEstate</title>
+          <style>
+            .bg-img {
+              background-image: url("img/Estate.JPG");
+              min-height: 650px; margin: 0px; background-position: center;
+              background-repeat: no-repeat; background-size: cover;position: relative;
+            }
+            img { width: 100%; top: 80px; }
+            .container { position: absolute; margin: 0px; width: auto; }
+            .container1 {
+              position: absolute;
+              right: 0;
+              margin: 20px;
+              max-width: 550px;
+              padding: 16px;
+              background-color:skyblue;
+              height: 450px;
+            }
+            .topnav { overflow: hidden; background-color: orange; }
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 10px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .topnav a:hover { background-color: #ddd;color: yellow; }
+            input[type=text], input[type=password] {
+              width: 90%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              border: none;
+              background: #f1f1f1;
+            }
+            input[type=text]:focus, input[type=password]:focus { background-color: #ddd; outline: none; }
+            .btn {
+              background-color: #4CAF50;
+              color: white;
+              padding: 16px 20px;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+            }
+            .btn:hover { opacity: 1; }
+            table, th, td {
+              border: 1px solid black;
+              background-color: rgb(91, 192, 91);
+              border-collapse: collapse;
+              width: 50%;
+              height: 50px;
+              vertical-align: bottom;
+            }
+        </style>
+    </head>
+
+    <body>
+
+      <div class="bg-img">
+        <div class="container">
+          <div class="topnav">
+            <a href="#buy">Buy</a>
+            <a href="#sale">Sale</a>
+            <a href="#loan">Loan</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+
+        <form class="container1">
+          <h1><center>Loan Information</center></h1>
+          
+          <label for="LoanAmount"><b>Loan Amount:</b></label>
+          <input type="text" placeholder="Enter Amount" style="width: 360px;" id="txtLoanAmount"> $
+          
+          <label for="InterestRate"><b>Interest Rate:</b></label>
+          <input type="text" placeholder="Enter Rate" style="width: 370px;" id="txtInterestRate"> %
+
+          <label for="LoanTerm"><b>Loan Term:</b></label>
+          <input type="text" placeholder="Enter Loan Term" style="width: 360px;" id="txtLoanTerm"> Years
+
+          <label for="StartDate"><b>Start Date:</b></label>
+          <select id="ddlMonth">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+          <select id="ddlYear">
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+          </select>
+          
+          <label><b>Show results by:</b></label>
+          <select>
+            <option>Year</option>
+          </select>
+
+          <button type="button" class="btn" id="cal">Calculate</button>
+
+        </form>
+
+      </div>
+
+      <div id="MonthlyPmt">
+
+      </div>
+
+      <div id="output">
+
+      </div>
+
+      <script type="text/javascript">
+          document.getElementById('cal').addEventListener('click',LoanCalculator);
+          function LoanCalculator() {
+          
+          var LoanAmount = document.getElementById("txtLoanAmount").value;
+          
+          var InterestRatePercentage = document.getElementById("txtInterestRate").value;
+
+          var InterestRate = InterestRatePercentage/100;
+          
+          var LoanTerm = document.getElementById("txtLoanTerm").value;
+          
+          var numberofmonths = LoanTerm * 12; 
+          
+          var Year = document.getElementById("ddlYear").value;
+
+          var Balance = LoanAmount;
+          
+          var MonthlyInterestRate = InterestRate/12;
+          
+          var InterestPaidPerMonth = Balance * MonthlyInterestRate;
+          
+          var MonthlyPayment = LoanAmount * MonthlyInterestRate/(1-Math.pow(1+MonthlyInterestRate, -numberofmonths));
+          
+          var Principal;
+
+          var Balance;
+          
+          document.getElementById("MonthlyPmt").innerHTML = "MonthlyPayment = " + MonthlyPayment;  
+          var result="<table>";
+          result += "<tr> <th>Date</th> <th>Interest</th> <th>Principal</th> <th>Balance</th> </tr>";
+          
+            var i;
+            for(i = 0; i < LoanTerm; i++) {
+              var interestyear =0;
+              var principalyear =0;
+              for (j=0; j<12;j++){
+                    InterestPaidPerMonth = Balance * MonthlyInterestRate;
+                    Principal = MonthlyPayment - InterestPaidPerMonth; 
+                    
+                    Balance = Balance - Principal;
+                    interestyear += InterestPaidPerMonth;
+                    principalyear += Principal;
+              }
+              result += "<tr> <td>" + Year + "</td> <td>" + interestyear.toFixed(2) + "</td> <td>" + principalyear.toFixed(2) + "</td> <td>" + Balance.toFixed(2) + "</td> </tr>";
+
+              Year++;
+            }
+
+            result += "</table>";
+
+            document.getElementById("output").innerHTML = result;     
+            
+        }
+
+      </script>
+
+    </body>
+    
+</html>
