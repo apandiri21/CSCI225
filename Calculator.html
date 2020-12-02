@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>JavaScript Calculator</title>
+        <link rel="stylesheet" href="css/project.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    </head>
+
+
+    <body>
+        ​​<ul>
+            <li><a class="active" href="Calculator.html">Calculator</a></li>
+            <li><a class="active" href="Description.html">Description</a></li>
+            <li><a class="active" href="Help.html">Help</a></li>
+        </ul>
+
+        <div class="calculator">
+          <div class="input" id="input">
+            <p id="displayNumber"></p>
+          </div>
+          <div class="buttons">
+            <div class="operators">
+              <button id="plus" class="button">+</button>
+              <button id="minus" class="button">-</button>
+              <button id="multiply" class="button">*</button>
+              <button id="divide" class="button">/</button>
+              <button id="power" class="button">^</button>
+            </div>
+            <div class="leftPanel">
+              <div class="numbers">
+                <button id="seven" class="button">7</button>
+                <button id="eight" class="button">8</button>
+                <button id="nine" class="button">9</button>
+              </div>
+              <div class="numbers">
+                <button id="four" class="button">4</button>
+                <button id="five" class="button">5</button>
+                <button id="six" class="button">6</button>
+              </div>
+              <div class="numbers">
+                <button id="one" class="button">1</button>
+                <button id="two" class="button">2</button>
+                <button id="three" class="button">3</button>
+              </div>
+              <div class="numbers">
+                <button id="zero" class="button">0</button>
+                <button id="decimal" class="button">.</button>
+                <button id="clear" class="button">C</button>
+              </div>
+            </div>
+            <div class="equal" id="result">=</div>
+          </div>
+        </div>
+        <script src="Calculator.js"></script> 
+    </body>
+</html>
