@@ -83,6 +83,9 @@ $('#nine').click(function(){
 $('#plus').click(function(){
     $("#displayNumber").text("+");
     numList.push(numListValue);
+    if (operList.length != 0) { // 3 + 4 + ---- do the calculation and pop the numbers
+        docalculation();
+    }  
     operList.push('+');
     numListValue= 0;
 });
@@ -90,6 +93,9 @@ $('#plus').click(function(){
 $('#minus').click(function(){
     $("#displayNumber").text("-");
     numList.push(numListValue);
+    if (operList.length != 0) {
+        docalculation();
+    }
     operList.push('-');
     numListValue = 0;
 });
@@ -97,6 +103,9 @@ $('#minus').click(function(){
 $('#multiply').click(function(){
     $("#displayNumber").text("*");
     numList.push(numListValue);
+    if (operList.length != 0) {
+        docalculation();
+    }
     operList.push('*');
     numListValue = 0;
 });
@@ -104,6 +113,9 @@ $('#multiply').click(function(){
 $('#divide').click(function(){
     $("#displayNumber").text("/");
     numList.push(numListValue);
+    if (operList.length != 0) {
+        docalculation();
+    }
     operList.push('/');
     numListValue = 0;
 });
@@ -111,6 +123,9 @@ $('#divide').click(function(){
 $('#power').click(function(){
     $("#power").text("^");
     numList.push(numListValue);
+    if (operList.length != 0) {
+        docalculation();
+    }
     operList.push('^');
     numListValue = 0;
 });
@@ -127,9 +142,47 @@ $('#clear').click(function(){
     numListValue = "";
 });
 
+function docalculation(){
+    var result = 0;
+    var num2 = numList[numList.length-1];  // 3 - 4    in you stack  34   when you pop , you get 4 first
+    console.log("num2="+num2);
+    numList.pop();
+    var num1 = numList[numList.length-1];
+    console.log("num1="+num1);
+    numList.pop();
+    oper = operList[operList.length-1];
+    console.log("oper="+oper);
+    operList.pop();
+    console.log("num1="+num1+" num2="+num2+" oper="+oper);
+    if (oper === '+'){
+        result = num1 + num2;
+        numList.push(result);
+        // alert(numList);
+    } else if (oper === '-'){
+        result = num1 - num2;
+        numList.push(result);
+        // alert(numList);
+    } else if (oper === '*') {
+        result = num1 * num2;
+        numList.push(result);
+    } else if (oper === '/') {
+        result = num1 / num2;
+        numList.push(result);
+    } else if (oper === '^') {
+        result = Math.pow(num1, num2);
+        numList.push(result);
+    }
+
+    $("#displayNumber").text(result);
+}
+
 $('#result').click(function(){
     numList.push(numListValue);
-    numListValue = 0;
+    numListValue = 0
+    if (operList.length != 0) {
+        docalculation();
+    }
+/*
     var result = 0;
     var num1;
     var num2;
@@ -221,4 +274,5 @@ $('#result').click(function(){
 
     //alert(result);
     $("#displayNumber").text(result);
+    */
 });
